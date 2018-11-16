@@ -3,19 +3,25 @@
 public class Question {
   public String question; 
   public int posRightAnswer; 
-  public String[] answers; 
+  public String[] choices; 
   
-  public Question(String question, int posRightAnswer, String[] answers) {
+  public Question(String question, int posRightAnswer, String[] choices) { //constructor
     this.question = question; 
     this.posRightAnswer = posRightAnswer; 
-    this.answers = answers; 
+    this.choices = choices; 
   }
   
-  public Question() {
-    question = null; 
-    posRightAnswer = 0; 
-    answers = null; 
+  public String getQuestion() { //gets the Question 
+   return question; 
   }
-
+  
+  public String[] getChoices() { //gets the array of choices 
+   return choices; 
+  }
+  
+  public int getAnswer() { //return true of the pos of right answer is correct 
+   return posRightAnswer; 
+  }
+  
 } //end of class 
 
