@@ -17,8 +17,17 @@ public class Final {
         
         //Open File (325) 
         File file = new File("testFile.txt"); 
-        Scanner inputFile = new Scanner(file); 
+         
         
+        //check if file exisits 
+        if (!file.exists()) {
+         System.out.println("file does not exisit"); 
+         //exit program
+         System.exit(0); 
+        }
+        
+        //open files
+        Scanner inputFile = new Scanner(file);
         while(inputFile.hasNext()) {
             //Read First Line of File 
            String question = inputFile.nextLine(); 
