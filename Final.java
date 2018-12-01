@@ -17,6 +17,7 @@ public class Final {
         
         //Stores File (325) 
         File file = new File("testFile.txt"); 
+        Question readQuestion = new Question(file); 
                  
         //open files
         Scanner inputFile = new Scanner(file);
@@ -34,37 +35,33 @@ public class Final {
         inputFile.close(); //close file
         
                 
-        /*for (Question q : questions) {
-            System.out.println(q.getQuestion() + "\n" + Arrays.toString(q.getChoices()));
-            int userInput = in.nextInt(); 
-
-            if (isCorrectAnswer(q, userInput)) {
-               System.out.println("Hooray! You have entered the correct answer");  
-            } else {
-               System.out.println("You have entered the wrong answer"); 
                
-            } 
-        }*/
-        
-     } //end of main method
+  } //end of main method
+  
+  public static String readQuestion(Question q) { 
+       for (Question q : questions) {
+         System.out.println(q.getQuestion() + "\n" + Arrays.toString(q.getChoices()));
+         int userInput = in.nextInt(); 
+
+         if (isCorrectAnswer(q, userInput)) {
+            System.out.println("Hooray! You have entered the correct answer");  
+         } else {
+            System.out.println("You have entered the wrong answer"); 
+            
+         } 
+       }   
+  }
      
   public static boolean isCorrectAnswer (Question q, int userInput) {
-        if ( userInput == (q.getAnswer() + 1)) {
-            return true; 
-         } else {
-            return false; 
-         }
+     if ( userInput == (q.getAnswer() + 1)) {
+         return true; 
+      } else {
+         return false; 
+      }
          
   } //end of correct method 
   
 } //end of class
 
 
-   
-/*while(inputFile.hasNext()) {
-            //Reads Question and the prints it out
-           String question = inputFile.nextLine(); 
-           System.out.println(question); 
-           
-        }*/
-
+  

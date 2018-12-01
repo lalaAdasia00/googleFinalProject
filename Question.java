@@ -1,9 +1,20 @@
+import java.util.Scanner; 
+import java.io.IOException;
+import java.io.File;
+import java.util.Arrays; 
+import java.io.*; 
 //Class for Questions 
 
 public class Question {
   public String question; 
   public int posRightAnswer; 
   public String[] choices; 
+  public File file; 
+  
+  public Question(File file) {
+  
+  
+  } 
   
   public Question(String question, int posRightAnswer, String[] choices) { //constructor
     this.question = question; 
