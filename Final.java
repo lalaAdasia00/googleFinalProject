@@ -21,7 +21,7 @@ public class Final {
         ArrayList<Question> read = readQuestions("testFile.txt"); //readQuestions from text file 
                 
         for (Question q : read) {
-            System.out.println(q.getQuestion() + "\n" + Arrays.toString(q.getChoices()).substring(1, q.length()-1));
+            System.out.println(q.getQuestion() + "\n" + Arrays.toString(q.getChoices()));
             int userInput = in.nextInt(); 
    
             if (isCorrectAnswer(q, userInput)) {
@@ -29,9 +29,7 @@ public class Final {
             } else {
                System.out.println("You have entered the wrong answer"); 
             } 
-         } 
-                
-        
+         }  
                
   } //end of main method
   
