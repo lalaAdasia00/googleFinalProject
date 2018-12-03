@@ -19,17 +19,30 @@ public class Final {
         Scanner in = new Scanner(System.in); 
  
         ArrayList<Question> read = readQuestions("testFile.txt"); //readQuestions from text file 
+        System.out.println("\t\t\t\t---Welcome to 12 Question Holiday Game---"); //directions 
+        System.out.println("\t\tDirections: When the question appears on the screen, \n\ttype the right number the corresponds to the right answer."); 
+        System.out.print("\nPlease Enter your Player Name: "); //enters player name 
+        String name = in.nextLine(); 
+        int score = 0; 
                 
         for (Question q : read) {
             System.out.println(q.getQuestion() + "\n" + Arrays.toString(q.getChoices()));
             int userInput = in.nextInt(); 
    
-            if (isCorrectAnswer(q, userInput)) {
-               System.out.println("Hooray! You have entered the correct answer");  
+            if (isCorrectAnswer(q, userInput)) { //if the user chooses the correct answer 
+               System.out.println("Hooray! You have entered the correct answer"); 
+               score++; //score increments 
+               System.out.println(name + ", your Score is: " + score); //prints out score
             } else {
                System.out.println("You have entered the wrong answer"); 
+               score--; //score decrements
+               if(score < 0) { //so score does not go negative 
+                  score = 0;
+               }
+               System.out.println(name + ", your Score is: " + score); //prints out score 
             } 
-         }  
+         } 
+         System.out.println("\nThank you for playing  
                
   } //end of main method
   
@@ -58,7 +71,7 @@ public class Final {
      return q; 
   } //end of readQuestion method 
      
-  public static boolean isCorrectAnswer (Question q, int userInput) {
+  public static boolean isCorrectAnswer (Question q, int userInput) { //determines if answer is correct or not 
      if ( userInput == (q.getAnswer() + 1)) {
          return true; 
       } else {
