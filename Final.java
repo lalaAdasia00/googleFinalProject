@@ -19,7 +19,7 @@ public class Final {
         Scanner in = new Scanner(System.in); 
  
         ArrayList<Question> read = readQuestions("testFile.txt"); //readQuestions from text file 
-        System.out.println("\t\t\t\t---Welcome to 12 Question Holiday Game---"); //directions 
+        System.out.println("\t\t\t\t---Welcome to 12 Questions of Christmas!---"); //directions 
         System.out.println("\t\tDirections: When the question appears on the screen, \n\ttype the right number the corresponds to the right answer."); 
         System.out.print("\nPlease Enter your Player Name: "); //enters player name 
         String name = in.nextLine(); 
@@ -42,7 +42,8 @@ public class Final {
                System.out.println(name + ", your Score is: " + score); //prints out score 
             } 
          } 
-         System.out.println("\nThank you for playing  
+         System.out.println("\n\n" + name + ", your Total Score is: " + score); //prints out score 
+         System.out.println("\nThank you " + name + " for playing 12 Questions of Christmas!");  
                
   } //end of main method
   
